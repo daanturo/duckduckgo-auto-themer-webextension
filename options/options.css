@@ -1,0 +1,36 @@
+body {
+    margin: 4em;
+}
+
+* {
+    font-family: sans-serif;
+}
+
+.themes-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.themes-list label {
+    text-transform: capitalize;
+}
+
+.theme-preview {
+    border-radius: 7%;
+    border: thin solid gray;
+    overflow: hidden;
+}
+
+.theme-preview img {
+    transform: scale(1.125);
+}
+
+button {
+    height: 4em;
+    width: 8em;
+    border-radius: 12.5%;
+}
+
+sup {
+    font-size: small;
+}
