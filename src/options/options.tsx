@@ -378,8 +378,6 @@ function Page() {
       ]).then(function (result) {
         setInitFlag(false);
         try {
-          const color_scheme = shared.getSystemColorScheme();
-
           try {
             // order of pre-selected radio choice: from saved options / extension default
             if (light_theme === null || force) {

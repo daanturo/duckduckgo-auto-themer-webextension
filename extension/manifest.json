@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "0.2.1",
+  "version": "0.3.0",
   "name": "Duckduckgo auto themer",
 
   "homepage_url": "https://gitlab.com/daanturo/duckduckgo-auto-themer-webextension",
@@ -15,6 +15,13 @@
     "scripts": ["dist/background.js"],
     "service_worker": "dist/background.js"
   },
+
+  "content_scripts": [
+    {
+      "matches": ["*://duckduckgo.com/*"],
+      "js": ["dist/content/color_scheme_content_script.js"]
+    }
+  ],
 
   "options_ui": {
     "page": "dist/options/options.html",

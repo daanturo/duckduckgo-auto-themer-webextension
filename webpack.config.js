@@ -3,9 +3,11 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    "options/options.js": "./src/options/options",
-    "background.js": "./src/background",
     "shared.js": "./src/shared",
+    "background.js": "./src/background",
+    "content/color_scheme_content_script.js":
+      "./src/content/color_scheme_content_script",
+    "options/options.js": "./src/options/options",
   },
   output: {
     path: path.join(__dirname, "extension", "dist"),

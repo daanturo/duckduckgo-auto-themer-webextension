@@ -1,7 +1,7 @@
 import _ from "lodash";
 
 // API namespaces
-export const browser = browser !== undefined ? browser : chrome;
+export const browser = typeof browser !== "undefined" ? browser : chrome;
 
 export const DDG_DOMAIN = "duckduckgo.com";
 
@@ -78,8 +78,9 @@ export async function getThemeFromCookies() {
   );
 }
 
-export function getSystemColorScheme() {
-  if (window.matchMedia === undefined) return undefined;
+export function getSystemColorScheme(): "dark" | "light" | null {
+  if (typeof window === "undefined" || window.matchMedia === undefined)
+    return null;
   const dark_flag = window.matchMedia("(prefers-color-scheme: dark)").matches;
   return dark_flag ? "dark" : "light";
 }
