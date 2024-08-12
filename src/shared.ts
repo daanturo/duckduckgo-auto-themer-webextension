@@ -2,7 +2,6 @@ import _ from "lodash";
 
 export const DDG_DOMAIN = "duckduckgo.com";
 
-export const EXT_NAME = "Duckduckgo auto theme setter";
 export const THEME_KEY = "ae";
 
 export const THEME_TABLE = {
@@ -98,7 +97,7 @@ export function setCookiesForSettings(
     if (exclude_names.includes(cookie_name)) {
       if (DEBUG) {
         console.log(
-          `${EXT_NAME} / setCookiesForSettings : told to ignore existing cookie named "${cookie_name}".`,
+          `${browser.runtime.getManifest().name} / setCookiesForSettings : told to ignore existing cookie named "${cookie_name}".`,
         );
       }
     } else {
@@ -107,7 +106,7 @@ export function setCookiesForSettings(
       cookie["value"] = json_obj[kname];
       browser.cookies.set(cookie).catch(function (err) {
         console.log(
-          `${EXT_NAME} / setCookiesForSettings : `,
+          `${browser.runtime.getManifest().name} / setCookiesForSettings : `,
           JSON.stringify(cookie),
           err,
         );

@@ -1,7 +1,11 @@
 {
   "manifest_version": 3,
   "version": "0.2.0",
-  "name": "Duckduckgo auto theme setter",
+  "name": "Duckduckgo auto themer",
+
+  "homepage_url": "https://gitlab.com/daanturo/duckduckgo-auto-themer-webextension",
+
+  "description": "Automatically change Duckduckgo's theme based on the browser's color scheme.",
 
   "permissions": ["tabs", "cookies", "storage"],
 
@@ -12,17 +16,14 @@
     "scripts": ["dist/background.js"]
   },
 
-
   "options_ui": {
     "page": "dist/options/options.html",
     "open_in_tab": true
   },
 
-  "homepage_url": "https://gitlab.com/daanturo/duckduckgo-auto-theme-setter-webextension",
-
   "browser_specific_settings": {
     "gecko": {
-      "id": "duckduckgo-auto-theme-setter@example.org"
+      "id": "duckduckgo-auto-themer@example.org"
     }
   },
 
