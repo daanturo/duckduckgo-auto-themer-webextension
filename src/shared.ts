@@ -116,7 +116,7 @@ export function setCookiesForSettings(
   });
 }
 
-export function isNullOrUndefined(arg) {
+export function isNil(arg) {
   return arg === undefined || arg === null;
 }
 
@@ -129,5 +129,5 @@ export async function storageGetSyncOrManaged(keys: string[]) {
   }
   const sync = await browser.storage.sync.get(keys);
   // Prioritize user's configs
-  return { ..._.pickBy(managed, (v) => !isNullOrUndefined(v)), ...sync };
+  return { ..._.pickBy(managed, (v) => !isNil(v)), ...sync };
 }
