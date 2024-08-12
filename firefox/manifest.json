@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "0.3.0",
+  "version": "0.4.0",
   "name": "Duckduckgo auto themer",
 
   "homepage_url": "https://gitlab.com/daanturo/duckduckgo-auto-themer-webextension",

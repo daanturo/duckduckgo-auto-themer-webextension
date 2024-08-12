@@ -202,6 +202,8 @@ function ThemePicker({
     const default_note =
       theme === shared.DDG_DEFAULT_THEME[scheme] ? " (scheme's default)" : "";
     const label_txt = `${shared.capitalize(theme)}${default_note}`;
+    const checked = theme === selected;
+    const classes = `theme-preview overflow-hidden rounded-xl border ${checked ? "ring-4 ring-orange-500" : ""}`;
     return (
       <>
         <input
@@ -209,13 +211,13 @@ function ThemePicker({
           name={`${scheme}-theme`}
           id={`${scheme_theme_name}`}
           value={`${theme}`}
-          checked={theme === selected}
+          checked={checked}
           onChange={function () {
             setter((_) => theme);
           }}
         />
-        <label htmlFor={`${scheme_theme_name}`}>
-          <div className="theme-preview overflow-hidden rounded-xl border">
+        <label htmlFor={`${scheme_theme_name}`} className="text-sm">
+          <div className={classes}>
             <img src={`../../images/${theme}.webp`} className="scale-110" />
           </div>
           {label_txt}
@@ -227,7 +229,7 @@ function ThemePicker({
     <>
       <Heading lv="3"> {shared.capitalize(scheme) + " theme"}</Heading>
       <br />
-      <div className="themes-list flex flex-row" id={div_id}>
+      <div className="themes-list flex flex-row gap-x-1" id={div_id}>
         <br />
         {theme_radios}
       </div>

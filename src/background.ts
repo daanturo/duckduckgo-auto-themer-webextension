@@ -20,7 +20,7 @@ async function querySystemColorSchemeSyncOrAsyncContentScript(tab, callback) {
   }
 }
 
-async function cookieUpdate() {
+async function cookieUpdateEvent() {
   return await getActiveTab(
     browser.runtime.getManifest().host_permissions,
   ).then(async function (tabs) {
@@ -80,4 +80,4 @@ async function cookieUpdate() {
 }
 
 // update when the tab is updated
-browser.tabs.onUpdated.addListener(cookieUpdate);
+browser.tabs.onUpdated.addListener(cookieUpdateEvent);
