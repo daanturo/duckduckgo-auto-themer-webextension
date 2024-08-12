@@ -17,7 +17,7 @@ With this extension, you can pick 2 different themes to have them applied approp
 
 ## Building
 
-Install [PNPM](https://pnpm.io/). Then execute:
+Install [PNPM](https://pnpm.io/), or `npm` is also unlikely to not work. Then execute:
 
 ```bash
 pnpm install
@@ -27,7 +27,7 @@ pnpm build
 Run using [web-ext](https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/):
 
 ```bash
-web-ext run -s extension/
+web-ext run -s firefox/
 ```
 
 ## Notices

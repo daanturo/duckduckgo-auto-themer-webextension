@@ -2,7 +2,7 @@
 	"scripts": {
 		"build": "webpack",
 		"build:watch": "webpack watch",
-		"web-ext": "web-ext run -s extension/ --verbose --devtools -f deved --url duck.com/?q=duck",
+		"web-ext": "web-ext run -s firefox/ --verbose --devtools -f deved --url duck.com/?q=duck",
 		"start": "pnpm run build && pnpm run build:watch 2>/dev/null & pnpm run web-ext"
 	},
 	"dependencies": {

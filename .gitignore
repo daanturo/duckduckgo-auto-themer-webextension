@@ -11,3 +11,8 @@ node_modules/
 *.js.map
 
 *-source.tar.*
+
+other-browsers/*/dist/
+other-browsers/*/images/
+
+.amo-upload-uuid

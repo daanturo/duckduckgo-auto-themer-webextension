@@ -10,7 +10,7 @@ module.exports = {
     "options/options.js": "./src/options/options",
   },
   output: {
-    path: path.join(__dirname, "extension", "dist"),
+    path: path.join(__dirname, "firefox", "dist"),
     filename: "[name]",
   },
   module: {
