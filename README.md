@@ -5,3 +5,18 @@ Although [duckduckgo.com](duckduckgo.com) by default changes its theme automatic
 This Web Extension enables finer configuration. You can pick 2 different themes to have them applied appropriately. More advanced options (supported by Duckduckgo) can also be set for each of them.
 
 ![Duck](./preview/setting.webp)
+
+## Building
+
+Install [PNPM](https://pnpm.io/). Then execute:
+
+```bash
+pnpm install
+pnpm build
+```
+
+Run using [web-ext](https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/):
+
+```bash
+web-ext run -s extension/
+```
