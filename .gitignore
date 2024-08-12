@@ -9,3 +9,5 @@ node_modules/
 # !dist/**/*.html
 
 *.js.map
+
+*-source.tar.*

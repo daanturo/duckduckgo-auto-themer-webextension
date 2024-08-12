@@ -1,5 +1,5 @@
 import * as shared from "./shared";
-import { storageGetSyncOrManaged } from "./shared";
+import { browser, storageGetSyncOrManaged } from "./shared";
 
 function getActiveTab(url) {
   return browser.tabs.query({ active: true, currentWindow: true, url: url });

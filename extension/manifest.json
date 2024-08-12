@@ -5,14 +5,15 @@
 
   "homepage_url": "https://gitlab.com/daanturo/duckduckgo-auto-themer-webextension",
 
-  "description": "Automatically change Duckduckgo's theme based on the browser's color scheme.",
+  "description": "Automatically configure Duckduckgo's theme based on the browser's color scheme.",
 
-  "permissions": ["tabs", "cookies", "storage"],
+  "permissions": ["tabs", "cookies", "storage", "offscreen"],
 
   "host_permissions": ["*://duckduckgo.com/*"],
 
   "background": {
-    "scripts": ["dist/background.js"]
+    "scripts": ["dist/background.js"],
+    "service_worker": "dist/background.js"
   },
 
   "options_ui": {

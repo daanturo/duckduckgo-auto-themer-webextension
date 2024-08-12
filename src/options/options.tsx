@@ -4,7 +4,7 @@ import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 import * as shared from "../shared";
-import { storageGetSyncOrManaged } from "../shared";
+import { browser, storageGetSyncOrManaged } from "../shared";
 
 import _ from "lodash";
 

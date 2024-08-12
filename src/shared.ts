@@ -1,5 +1,8 @@
 import _ from "lodash";
 
+// API namespaces
+export const browser = browser !== undefined ? browser : chrome;
+
 export const DDG_DOMAIN = "duckduckgo.com";
 
 export const THEME_KEY = "ae";
