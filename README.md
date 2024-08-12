@@ -1,13 +1,9 @@
 # Duckduckgo Auto Themer
 
-<!-- Install image credit: https://github.com/gorhill/uBlock -->
 
-<a href="https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-auto-themer/"
-  ><img
-    src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png"
-    style="border-radius: 1em"
-/></a>
-
+<a href="https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-auto-themer/" >
+    <img src="https://user-images.githubusercontent.com/585534/107280546-7b9b2a00-6a26-11eb-8f9f-f95932f4bfec.png" style="border-radius: 1em" />
+</a>
 
 
 
@@ -33,3 +29,9 @@ Run using [web-ext](https://extensionworkshop.com/documentation/develop/getting-
 ```bash
 web-ext run -s extension/
 ```
+
+## Notices
+
+This extension is mostly tested on Firefox.
+
+I have modified so that apparently it can work on Chromium (and maybe its derivatives), but due to some [Manifest V3](https://stackoverflow.com/questions/77806570/how-to-get-os-dark-light-setting-in-chrome-extension-mv3-background-js) [limitation(s)](https://github.com/w3c/ServiceWorker/issues/1577), 2 or more reloads are needed before the themes are applied.
