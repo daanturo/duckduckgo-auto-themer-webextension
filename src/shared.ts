@@ -1,8 +1,8 @@
+import _ from "lodash";
+
 export const DDG_DOMAIN = "duckduckgo.com";
-export const HOST_PERMISSIONS = ["*://duckduckgo.com/*"]; // same as "host_permissions" in manifest.json
 
 export const EXT_NAME = "Duckduckgo auto theme setter";
-
 export const THEME_KEY = "ae";
 
 export const THEME_TABLE = {
@@ -47,6 +47,23 @@ export const EXT_DEFAULT_SHARED_OPTIONS = {
 export const EXT_DEFAULT_SHARED_OPTIONSC_COMMENT =
   "// Use browser's default sans-serif font for body and title, and enable infinite scrolling.";
 
+export function isString(obj) {
+  return typeof obj === "string" || obj instanceof String;
+}
+
+export function parseJsonMaybe(s) {
+  if (!isString(s)) return null;
+  try {
+    return JSON.parse(s);
+  } catch (err) {
+    return null;
+  }
+}
+
+export function capitalize(s: string) {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
 export async function getThemeFromCookies() {
   const cookie_obj = await browser.cookies.get({
     url: `https://${DDG_DOMAIN}`,
@@ -63,10 +80,6 @@ export function getSystemColorScheme() {
   if (window.matchMedia === undefined) return undefined;
   const dark_flag = window.matchMedia("(prefers-color-scheme: dark)").matches;
   return dark_flag ? "dark" : "light";
-}
-
-export function isString(obj) {
-  return typeof obj === "string" || obj instanceof String;
 }
 
 export function setCookiesForSettings(
@@ -103,11 +116,18 @@ export function setCookiesForSettings(
   });
 }
 
-export function parseJsonMaybe(s) {
-  if (!isString(s)) return null;
+export function isNullOrUndefined(arg) {
+  return arg === undefined || arg === null;
+}
+
+export async function storageGetSyncOrManaged(keys: string[]) {
+  let managed = {};
   try {
-    return JSON.parse(s);
+    managed = await browser.storage.sync.get(keys);
   } catch (err) {
-    return null;
+    console.log(`storageGetSyncOrManaged ${keys} ${err}`);
   }
+  const sync = await browser.storage.sync.get(keys);
+  // Prioritize user's configs
+  return { ..._.pickBy(managed, (v) => !isNullOrUndefined(v)), ...sync };
 }

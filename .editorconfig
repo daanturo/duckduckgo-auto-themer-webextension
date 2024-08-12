@@ -1,0 +1,6 @@
+root = true
+
+# Keep the formatter from modifying the package manager's style
+[package.json{,5,c}]
+indent_size = 4
+indent_style = tab

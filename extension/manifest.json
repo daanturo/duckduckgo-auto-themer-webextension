@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "name": "Duckduckgo auto theme setter",
 
   "permissions": ["tabs", "cookies", "storage"],
@@ -9,11 +9,12 @@
 
   "background": {
     "persistent": false,
-    "scripts": ["background.js"]
+    "scripts": ["dist/background.js"]
   },
 
+
   "options_ui": {
-    "page": "options/options.html",
+    "page": "dist/options/options.html",
     "open_in_tab": true
   },
 
@@ -28,7 +29,7 @@
   "web_accessible_resources": [
     {
       "matches": ["<all_urls>"],
-      "resources": ["shared/*"]
+      "resources": ["dist/shared.js", "images/*"]
     }
   ]
 }

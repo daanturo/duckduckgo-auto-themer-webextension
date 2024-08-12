@@ -1,0 +1,44 @@
+{
+	"scripts": {
+		"build": "webpack",
+		"build:watch": "webpack watch",
+		"web-ext": "web-ext run -s extension/ --verbose --devtools -f deved --url duck.com/?q=duck",
+		"start": "pnpm run build && pnpm run build:watch 2>/dev/null & pnpm run web-ext"
+	},
+	"dependencies": {
+		"lodash": "^4.17.21",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"tailwind-merge": "^2.4.0"
+	},
+	"devDependencies": {
+		"@babel/preset-env": "^7.25.0",
+		"@babel/preset-react": "^7.24.7",
+		"@swc/core": "^1.7.2",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"autoprefixer": "^10.4.19",
+		"babel-loader": "^9.1.3",
+		"babel-preset-react": "^6.24.1",
+		"css-loader": "^7.1.2",
+		"postcss": "^8.4.40",
+		"postcss-loader": "^8.1.1",
+		"postcss-preset-env": "^9.6.0",
+		"style-loader": "^4.0.0",
+		"swc-loader": "^0.2.6",
+		"tailwindcss": "^3.4.7",
+		"ts-loader": "^9.5.1",
+		"typescript": "^5.5.4",
+		"webpack": "^5.93.0",
+		"webpack-bundle-analyzer": "^4.10.2",
+		"webpack-cli": "^5.1.4",
+		"webpack-dev-server": "^5.0.4"
+	},
+	"babel": {
+		"presets": [
+			"@babel/preset-env",
+			"@babel/preset-react"
+		],
+		"plugins": []
+	}
+}

@@ -1,2 +1,11 @@
 test/
 web-ext-artifacts/
+node_modules/
+
+**/dist/**/*.js
+
+# **/dist/*
+# !**/dist/**/*.css
+# !dist/**/*.html
+
+*.js.map
